@@ -255,7 +255,10 @@ main > .tagline {
 }
 
 
-
+.palette {
+    
+   cursor: pointer; 
+}
 
 
 
