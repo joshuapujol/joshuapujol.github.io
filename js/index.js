@@ -71,7 +71,7 @@ $(document).ready(function(){
                 
             case 5: 
                 $("main").css({
-                "backgroundColor": "#00C853",
+                "backgroundColor": "#004D40",
                 "color": "white"});
             break;
             
