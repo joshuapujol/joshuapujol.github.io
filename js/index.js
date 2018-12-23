@@ -3,7 +3,7 @@ random = 0;
 
 $(document).ready(function(){
     
-    
+    var bgcounter = 0;
     var exists = [],
     randomInt;
     // Randomly generated number.
@@ -14,18 +14,30 @@ $(document).ready(function(){
     // Random Non-Repeating Number Generator
     function randomBGInt() {
 
-
-        for (var l = 0; l < 6; l++) {
-            do {
-
+    if (bgcounter < 6) {
+        
+    
+            for (var l = 0; l < 6; l++) {
+                do {
                 randomInt = Math.floor(Math.random() * 6 + 1);
-            } while (exists[randomInt]);
-            exists[randomInt] = true; {
-                       
-                return randomInt;
-                
+                } while (exists[randomInt]);
+                exists[randomInt] = true; {
+                    bgcounter++       
+                    return randomInt;
+                }
             }
-        }
+
+        } else {
+            
+            // Reinitialise the backgrounds to start
+            bgcounter = 0;
+            exists = [];
+            randomInt = [];
+            
+            $("main").css({
+            "backgroundColor": "#AF3D4E",
+            "color": "white"});              
+        }     
     }
 
         
@@ -59,13 +71,13 @@ $(document).ready(function(){
                 
             case 5: 
                 $("main").css({
-                "backgroundColor": "#64DD17",
-                "color": "black"});
+                "backgroundColor": "#00C853",
+                "color": "white"});
             break;
             
             case 6: 
                 $("main").css({
-                "backgroundColor": "#FFEA00",
+                "backgroundColor": "#0D47A1",
                 "color": "white"}); 
             break;
         }
